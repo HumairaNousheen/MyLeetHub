@@ -1,23 +1,17 @@
 class Solution(object):
     def maxSubArray(self, nums):
-        # Initialize subarr_sum with the first element and max_sum with the first element
+        # Initialize subarr_sum and max_sum with the first element
         subarr_sum = nums[0]
         max_sum = nums[0]
 
         for i in range(1, len(nums)):
-            subarr_sum += nums[i]  # Add the current element to subarr_sum
-
-            # If subarr_sum becomes negative, reset it to 0
-            if subarr_sum < 0:
-                subarr_sum = nums[i]  # Start fresh from the current element, not zero
+            # Add the current element to subarr_sum
+            subarr_sum = max(nums[i], subarr_sum + nums[i])
 
             # Update max_sum if subarr_sum is larger
-            if subarr_sum > max_sum:
-                max_sum = subarr_sum
+            max_sum = max(max_sum, subarr_sum)
 
         return max_sum
-
-
 
 
 
