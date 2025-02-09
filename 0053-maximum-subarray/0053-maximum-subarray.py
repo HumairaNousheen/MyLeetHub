@@ -1,17 +1,20 @@
-class Solution(object):
+class Solution:
     def maxSubArray(self, nums):
-        # Initialize subarr_sum and max_sum with the first element
-        subarr_sum = nums[0]
-        max_sum = nums[0]
+        # Initialize sum and maxi with appropriate values
+        sum = 0
+        maxi = float('-inf')  # Using negative infinity to represent the smallest possible value
+        
+        for x in range(len(nums)):
+            sum += nums[x]  # Add the current element to the sum
 
-        for i in range(1, len(nums)):
-            # Add the current element to subarr_sum
-            subarr_sum = max(nums[i], subarr_sum + nums[i])
+            if sum > maxi:
+                maxi = sum  # Update maxi if the current sum is larger
 
-            # Update max_sum if subarr_sum is larger
-            max_sum = max(max_sum, subarr_sum)
+            if sum < 0:
+                sum = 0  # Reset sum if it becomes negative
 
-        return max_sum
+        return maxi
+
 
 
 
