@@ -2,7 +2,7 @@ class Solution:
     def maxSubArray(self, nums):
         # Initialize sum and maxi with appropriate values
         sum = 0
-        maxi = float('-inf')  # Using negative infinity to represent the smallest possible value
+        maxi = -200000 # Using negative infinity to represent the smallest possible value
         
         for x in range(len(nums)):
             sum += nums[x]  # Add the current element to the sum
