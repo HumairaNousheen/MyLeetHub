@@ -1,5 +1,11 @@
 class Solution(object):
     def maxSumBST(self, root):
+        #intution 
+        # we know that every element to the left of a node will be smaller and bigger to its right
+        # a single node is always a BST so if node.left or node.right is null then pass min as +infinity and max as - infinity and sum as 0
+        # a node can be BST only when its lergest of smallest <node.val<smallest of largest
+        # if the condition satisfies then pass minimum from left and maximum from right (compare along with the current node) and left_sum+right_sum+1
+        #if not then pass reverse condiion to break the condition as you propagate upward like min as -infinity and max as + infinity 
         self.max_sum = 0
 
         def dfs(node):
