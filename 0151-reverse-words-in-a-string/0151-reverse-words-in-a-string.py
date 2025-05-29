@@ -52,11 +52,14 @@ class Solution(object):
                     end += 1
                 reverse(c, start, end - 1)
                 start = end + 1
-            return " ".join(c)
+            return "".join(c)
 
         # start here
         a = remove_unwanted_space(s)
         if a == "":
             return ""
         b = reverse_result(a)
-        return reverse_by_word(b)
+        print(b)
+        j=reverse_by_word(b)
+        print(j)
+        return j
